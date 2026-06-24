@@ -139,9 +139,9 @@ NAV = """<header class="nav">
     <button class="nav-toggle" aria-label="Menu">&#9776;</button>
     <nav class="nav-links">
       <a href="/index.html#features">Features</a>
-      <a href="/index.html#moon">Moon Rituals</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      <a href="/index.html#how">How it works</a>
+      <a href="/index.html#safety">Safety</a>
+      <a href="/support.html">Support</a>
       <a class="nav-cta" href="#get">Get the app</a>
     </nav>
   </div>
@@ -158,17 +158,19 @@ FOOTER = """<footer class="site">
         <div>
           <h4>Product</h4>
           <a href="/index.html#features">Features</a>
+          <a href="/index.html#how">How it works</a>
           <a href="/index.html#moon">Moon Rituals</a>
-          <a href="/index.html#get">Get the app</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="/support.html">Support</a>
+          <a href="/index.html#safety">Safety</a>
+          <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
         </div>
         <div>
           <h4>Legal</h4>
           <a href="/privacy.html">Privacy Policy</a>
           <a href="/terms.html">Terms of Service</a>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
         </div>
       </div>
     </div>
@@ -186,7 +188,7 @@ HEAD_COMMON = """<meta charset="utf-8"/>
 <link rel="icon" href="/astryn-logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/style.css"/>"""
 
 
@@ -201,7 +203,7 @@ def page(title, body, description=""):
 </head>
 <body>
 <canvas class="sky-canvas" aria-hidden="true"></canvas>
-<div class="sky-nebula" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
 {NAV}
 {body}
 {FOOTER}
@@ -270,7 +272,7 @@ def landing():
     <div class="wrap">
       <img class="hero-badge" src="/astryn-logo.png" alt="Astryn app icon"/>
       <span class="eyebrow">Observatory-grade astrology</span>
-      <h1>Read the sky<br/><em>that is yours alone.</em></h1>
+      <h1>Read the sky<br/><em class="grad-text">that is yours alone.</em></h1>
       <p class="lead">Personal astrology from your own birth chart, with guided moon rituals and a guide who remembers your story.</p>
       <div class="hero-cta" id="get">
         <a class="btn btn-primary" href="#get">Download on the App Store</a>
@@ -321,6 +323,52 @@ def landing():
     </div>
   </section>
 
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From your birth moment to daily guidance</h2>
+        <p>Astryn is built around your real chart. Here's the journey from first launch onward.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="step-no">1</div><h3>Share your birth moment</h3><p>Enter your date, time, and place of birth. Astryn computes a precise natal chart, the exact sky at the moment you arrived.</p></div>
+        <div class="step reveal"><div class="step-no">2</div><h3>Meet your Cosmic Portrait</h3><p>See your planets, houses, and aspects explained in plain language, the blueprint behind everything Astryn tells you.</p></div>
+        <div class="step reveal"><div class="step-no">3</div><h3>Live by the sky</h3><p>Daily and weekly forecasts personalised to your chart, plus a guided ritual for each moon phase as it turns.</p></div>
+        <div class="step reveal"><div class="step-no">4</div><h3>Reflect and connect</h3><p>Journal with cosmic-aware prompts, explore compatibility with the people you love, and talk to a guide who remembers your story.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="safety">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Safety first</span>
+        <h2>For reflection, not prescription</h2>
+        <p>Astryn is here to help you think, wonder, and grow, with clear boundaries about what it is and isn't.</p>
+      </div>
+      <div class="safety-grid">
+        <div class="safety-card reveal">
+          <div class="safety-icon">&#9737;</div>
+          <h3>For insight and entertainment</h3>
+          <p>Astryn is a tool for self-reflection, curiosity, and entertainment. Its readings, forecasts, and AI responses are not medical, psychological, legal, or financial advice, and are not factual predictions of the future. Use your own judgement and never rely on Astryn alone for important decisions.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">&#9789;</div>
+          <h3>Made for adults</h3>
+          <p>Astryn is intended for adults aged 18 and over, used while you are in a stable enough place to engage with self-directed reflection. It is not a substitute for care from a qualified professional, and not a diagnosis or treatment of any kind.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">&#10024;</div>
+          <h3>Your data stays yours</h3>
+          <p>Your birth details, journal entries, and conversations are encrypted and private. We never sell your data or use it to train public AI models. You can export or delete everything at any time. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+      <div class="crisis reveal">
+        <strong>Astryn is not a crisis service.</strong> It is not monitored in real time and cannot help in an emergency. If you are in immediate danger or experiencing a mental-health crisis, please contact your local emergency services or a crisis line now, for example the Samaritans on <a href="tel:116123">116&nbsp;123</a> in the UK, or <a href="tel:988">988</a> in the US.
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band" id="download">
     <div class="wrap reveal">
       <h2>Begin your journey</h2>
@@ -333,6 +381,76 @@ def landing():
                 description="Astryn is personal astrology from your own birth chart, with daily and weekly forecasts, guided moon rituals, and a guide who remembers your story.")
 
 
+SUPPORT_FAQ = [
+    ("What is Astryn?",
+     "Astryn is a personal astrology app. It calculates your natal chart from your exact birth details, then gives you daily and weekly guidance, guided moon rituals, journaling, compatibility insights, and an AI guide that remembers your story. It is made for self-reflection, curiosity, and entertainment."),
+    ("How does Astryn create my readings?",
+     "Everything starts with your birth chart, computed from the date, time, and place you were born. Your forecasts and insights are drawn from that chart and the current positions of the planets and moon, so they are personal to you rather than generic sun-sign horoscopes."),
+    ("What are Lumes?",
+     "Lumes are Astryn's in-app currency. You use them for deeper experiences such as extended conversations with your guide and certain premium readings. Subscribers receive a regular allowance of Lumes."),
+    ("What are guided moon rituals?",
+     "Astryn tracks the live phase of the moon and offers one thoughtful ritual to match, intention-setting around the new moon, release around the full moon, and gentle reflection in between. There is also a fire-and-release board for letting things go."),
+    ("What are Bonds and Constellations?",
+     "Bonds let you add the people who matter and explore the dynamics between your charts. Constellations group several people, such as a family, friendship circle, or team, to reveal shared strengths, roles, and gaps."),
+    ("Is my data private?",
+     "Yes. Your birth details, journal entries, and conversations are encrypted in transit and at rest. We do not sell your data, share it for advertising, or use it to train public AI models. For full details, see our <a href=\"/privacy.html\">Privacy Policy</a>."),
+    ("Is there a free trial?",
+     "Astryn may offer an introductory free trial on its subscription. You will not be charged until the trial ends, and you can cancel any time during the trial, at least 24 hours before it ends, without being charged."),
+    ("How do I manage or cancel my subscription?",
+     "Subscriptions are billed through your Apple ID and can be managed there. On your iPhone or iPad go to Settings, tap your name, then Subscriptions to view, change, or cancel."),
+    ("Can I export my data?",
+     "Yes. You can export your journal entries and personal data from the Settings screen in the app. Your reflections belong to you."),
+    ("The app isn't working properly. What should I do?",
+     "First, close and reopen the app. If the issue continues, make sure you have the latest version from the App Store. If it still happens, email us with a description of the problem and your device model and we'll help."),
+    ("How do I delete my account?",
+     "You can delete your account and all associated data from the Settings screen in the app. Alternatively, contact us and we will process your request within 48 hours."),
+]
+
+
+def support_page():
+    about = """<div class="app-info">
+      <div class="app-info-item"><h4>Developer</h4><p>Eluma Labs Ltd</p></div>
+      <div class="app-info-item"><h4>Platform</h4><p>iOS</p></div>
+      <div class="app-info-item"><h4>Category</h4><p>Lifestyle</p></div>
+    </div>"""
+    faqs = "\n".join(
+        f'<div class="faq-item reveal"><h3>{q}</h3><p>{a}</p></div>'
+        for q, a in SUPPORT_FAQ
+    )
+    body = f"""<main class="support">
+  <div class="wrap">
+    <div class="doc">
+      <a class="back-link" href="/index.html">&#8592; Back to Astryn</a>
+      <div class="section-head" style="text-align:left;margin-bottom:32px">
+        <span class="eyebrow">Support</span>
+        <h2>How can we help?</h2>
+        <p>Answers to common questions, and a direct line to us if you need more.</p>
+      </div>
+
+      <h2 class="sec">About the app</h2>
+      {about}
+
+      <h2 class="sec">Frequently asked questions</h2>
+      {faqs}
+
+      <h2 class="sec">Contact us</h2>
+      <p>Can't find what you're looking for? We're happy to help, and typically reply within 24-48 hours.</p>
+      <div class="contact-box reveal">
+        <h3>Email support</h3>
+        <p>We usually respond within one to two working days.</p>
+        <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
+      </div>
+
+      <div class="crisis" style="margin-top:32px">
+        <strong>In a crisis?</strong> Astryn is not a crisis service and cannot help in an emergency. If you are in immediate danger or distress, contact your local emergency services or a crisis line, for example the Samaritans on <a href="tel:116123">116&nbsp;123</a> in the UK, or <a href="tel:988">988</a> in the US.
+      </div>
+    </div>
+  </div>
+</main>"""
+    return page("Astryn — Support", body,
+                description="Support and FAQs for Astryn, a personal astrology app by Eluma Labs Ltd.")
+
+
 def main():
     with open("index.html", "w") as f:
         f.write(landing())
@@ -340,7 +458,9 @@ def main():
         f.write(legal_page("Privacy Policy", PRIVACY_UPDATED, PRIVACY, PRIVACY_COMMITMENT))
     with open("terms.html", "w") as f:
         f.write(legal_page("Terms of Service", TERMS_UPDATED, TERMS))
-    print("Generated index.html, privacy.html, terms.html")
+    with open("support.html", "w") as f:
+        f.write(support_page())
+    print("Generated index.html, privacy.html, terms.html, support.html")
 
 
 if __name__ == "__main__":

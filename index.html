@@ -9,21 +9,21 @@
 <link rel="icon" href="/astryn-logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
 <canvas class="sky-canvas" aria-hidden="true"></canvas>
-<div class="sky-nebula" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn logo"/><span>ASTRYN</span></a>
     <button class="nav-toggle" aria-label="Menu">&#9776;</button>
     <nav class="nav-links">
       <a href="/index.html#features">Features</a>
-      <a href="/index.html#moon">Moon Rituals</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      <a href="/index.html#how">How it works</a>
+      <a href="/index.html#safety">Safety</a>
+      <a href="/support.html">Support</a>
       <a class="nav-cta" href="#get">Get the app</a>
     </nav>
   </div>
@@ -33,7 +33,7 @@
     <div class="wrap">
       <img class="hero-badge" src="/astryn-logo.png" alt="Astryn app icon"/>
       <span class="eyebrow">Observatory-grade astrology</span>
-      <h1>Read the sky<br/><em>that is yours alone.</em></h1>
+      <h1>Read the sky<br/><em class="grad-text">that is yours alone.</em></h1>
       <p class="lead">Personal astrology from your own birth chart, with guided moon rituals and a guide who remembers your story.</p>
       <div class="hero-cta" id="get">
         <a class="btn btn-primary" href="#get">Download on the App Store</a>
@@ -117,6 +117,52 @@
     </div>
   </section>
 
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From your birth moment to daily guidance</h2>
+        <p>Astryn is built around your real chart. Here's the journey from first launch onward.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="step-no">1</div><h3>Share your birth moment</h3><p>Enter your date, time, and place of birth. Astryn computes a precise natal chart, the exact sky at the moment you arrived.</p></div>
+        <div class="step reveal"><div class="step-no">2</div><h3>Meet your Cosmic Portrait</h3><p>See your planets, houses, and aspects explained in plain language, the blueprint behind everything Astryn tells you.</p></div>
+        <div class="step reveal"><div class="step-no">3</div><h3>Live by the sky</h3><p>Daily and weekly forecasts personalised to your chart, plus a guided ritual for each moon phase as it turns.</p></div>
+        <div class="step reveal"><div class="step-no">4</div><h3>Reflect and connect</h3><p>Journal with cosmic-aware prompts, explore compatibility with the people you love, and talk to a guide who remembers your story.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="safety">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Safety first</span>
+        <h2>For reflection, not prescription</h2>
+        <p>Astryn is here to help you think, wonder, and grow, with clear boundaries about what it is and isn't.</p>
+      </div>
+      <div class="safety-grid">
+        <div class="safety-card reveal">
+          <div class="safety-icon">&#9737;</div>
+          <h3>For insight and entertainment</h3>
+          <p>Astryn is a tool for self-reflection, curiosity, and entertainment. Its readings, forecasts, and AI responses are not medical, psychological, legal, or financial advice, and are not factual predictions of the future. Use your own judgement and never rely on Astryn alone for important decisions.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">&#9789;</div>
+          <h3>Made for adults</h3>
+          <p>Astryn is intended for adults aged 18 and over, used while you are in a stable enough place to engage with self-directed reflection. It is not a substitute for care from a qualified professional, and not a diagnosis or treatment of any kind.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">&#10024;</div>
+          <h3>Your data stays yours</h3>
+          <p>Your birth details, journal entries, and conversations are encrypted and private. We never sell your data or use it to train public AI models. You can export or delete everything at any time. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+      <div class="crisis reveal">
+        <strong>Astryn is not a crisis service.</strong> It is not monitored in real time and cannot help in an emergency. If you are in immediate danger or experiencing a mental-health crisis, please contact your local emergency services or a crisis line now, for example the Samaritans on <a href="tel:116123">116&nbsp;123</a> in the UK, or <a href="tel:988">988</a> in the US.
+      </div>
+    </div>
+  </section>
+
   <section class="cta-band" id="download">
     <div class="wrap reveal">
       <h2>Begin your journey</h2>
@@ -136,17 +182,19 @@
         <div>
           <h4>Product</h4>
           <a href="/index.html#features">Features</a>
+          <a href="/index.html#how">How it works</a>
           <a href="/index.html#moon">Moon Rituals</a>
-          <a href="/index.html#get">Get the app</a>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <a href="/support.html">Support</a>
+          <a href="/index.html#safety">Safety</a>
+          <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
         </div>
         <div>
           <h4>Legal</h4>
           <a href="/privacy.html">Privacy Policy</a>
           <a href="/terms.html">Terms of Service</a>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
         </div>
       </div>
     </div>

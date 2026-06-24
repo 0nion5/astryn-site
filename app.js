@@ -18,7 +18,7 @@
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(180, Math.floor((w * h) / 9000));
+      const count = Math.min(140, Math.floor((w * h) / 11000));
       stars = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -50,7 +50,16 @@
     requestAnimationFrame(draw);
   }
 
-  /* ---- Scroll reveal ---- */
+  /* ---- Staggered scroll reveal ---- */
+  // Give grid children an incremental delay for a cascading entrance.
+  document.querySelectorAll(".pillars, .steps, .safety-grid").forEach((grid) => {
+    [...grid.children].forEach((child, i) => {
+      if (child.classList.contains("reveal")) {
+        child.style.transitionDelay = `${i * 0.08}s`;
+      }
+    });
+  });
+
   const reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !reduceMotion) {
     const io = new IntersectionObserver(
@@ -67,6 +76,22 @@
     reveals.forEach((el) => io.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add("in"));
+  }
+
+  /* ---- Subtle aurora parallax on pointer move ---- */
+  const aurora = document.querySelector(".aurora");
+  if (aurora && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+    window.addEventListener("mousemove", (e) => {
+      tx = (e.clientX / window.innerWidth - 0.5) * 24;
+      ty = (e.clientY / window.innerHeight - 0.5) * 24;
+    });
+    (function loop() {
+      cx += (tx - cx) * 0.05;
+      cy += (ty - cy) * 0.05;
+      aurora.style.transform = `translate(${cx}px, ${cy}px)`;
+      requestAnimationFrame(loop);
+    })();
   }
 
   /* ---- Nav scrolled state + mobile toggle ---- */
