@@ -397,9 +397,6 @@ def landing():
           <p>Your guide is designed with wellbeing in mind. Built-in safeguards keep every interaction supportive and responsible.</p>
         </div>
       </div>
-      <div class="crisis reveal">
-        <strong>Astryn is for reflection and entertainment, not a crisis service.</strong> Its readings are not medical or psychological advice. If you are in immediate danger or distress, contact your local emergency services or a crisis line now, for example the Samaritans on <a href="tel:116123">116&nbsp;123</a> in the UK, or <a href="tel:988">988</a> in the US.
-      </div>
     </div>
   </section>
 
@@ -473,10 +470,6 @@ def support_page():
         <h3>Email support</h3>
         <p>We usually respond within one to two working days.</p>
         <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
-      </div>
-
-      <div class="crisis" style="margin-top:32px">
-        <strong>In a crisis?</strong> Astryn is not a crisis service and cannot help in an emergency. If you are in immediate danger or distress, contact your local emergency services or a crisis line, for example the Samaritans on <a href="tel:116123">116&nbsp;123</a> in the UK, or <a href="tel:988">988</a> in the US.
       </div>
     </div>
   </div>
