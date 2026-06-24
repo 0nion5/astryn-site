@@ -249,7 +249,7 @@ PILLARS = [
 FEATURES = [
     ("A chart you can actually talk to", "&#9737;",
      "Astryn turns your birth chart into a personal guide. Built from your exact date, time, and place of birth, it reads the sky the way it touches you, then puts it into plain, useful language. No vague horoscopes written for millions of people. Just you, your chart, and the cosmos.",
-     ["Calculated from your exact birth moment", "Plain, useful language, never jargon", "No generic sun-sign horoscopes"]),
+     ["Calculated from your exact birth moment", "Planets, houses, and aspects in plain language", "No generic sun-sign horoscopes"]),
     ("A reading written for you, every day", "&#9788;",
      "Each morning, Astryn blends your birth chart with today's transits to write a fresh daily insight. Read it as a prompt to reflect on, not a fixed prediction. Your daily reading and your weekly report are included with your subscription.",
      ["A fresh insight every morning", "Your chart plus today's transits", "A prompt to reflect, not a prediction"]),
@@ -262,9 +262,9 @@ FEATURES = [
     ("A journal that understands you", "&#9998;",
      "Write freely or use guided templates. Astryn can reflect on your entries, drawing quiet connections between what you feel and what the sky is doing. Over time it builds a deeper, more accurate picture of who you are.",
      ["Free writing or guided templates", "Reflections that connect feeling and sky", "A truer picture of you over time"]),
-    ("Understand the people who matter", "&#10022;",
-     "Compatibility readings compare two full charts and show where you flow, where you spark, and where you can grow together. Save the people in your life and revisit their readings anytime.",
-     ["Compare two full charts", "See where you flow and where you spark", "Save people and revisit anytime"]),
+    ("Bonds and Constellations", "&#10022;",
+     "Compatibility readings compare two full charts and show where you flow, where you spark, and where you can grow together. Save the people in your life as Bonds, then gather them into Constellations, your family, your friends, your team, to see the shared strengths and dynamics of a whole group.",
+     ["Compare two full charts, side by side", "Constellations map family, friends, or teams", "Save people and revisit their readings anytime"]),
 ]
 
 
@@ -328,11 +328,11 @@ def landing():
       <div class="feature reveal">
         <div class="feature-text">
           <h3>Follow the Moon</h3>
-          <p>Lunar guidance and gentle rituals for every phase help you work with the Moon's rhythm rather than against it, from setting intentions on the new moon to releasing what no longer serves you on the full.</p>
+          <p>Lunar guidance and gentle rituals for every phase help you work with the Moon's rhythm rather than against it, from setting intentions on the new moon to releasing what no longer serves you on the full. When you are ready to let something go, write it down and burn it away on the fire and release board.</p>
           <ul>
-            <li>A ritual for every phase</li>
+            <li>Live phase and a guided ritual for every phase</li>
             <li>Set intentions on the new moon</li>
-            <li>Release what no longer serves on the full</li>
+            <li>A fire and release board to burn what no longer serves you</li>
           </ul>
         </div>
         <div class="feature-media">
