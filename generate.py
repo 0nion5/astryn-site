@@ -2,6 +2,19 @@
 """Generate privacy.html and terms.html from the canonical legal copy.
 Mirrors Astryn/Models/LegalContent.swift. Re-run after editing the sections."""
 import html
+import hashlib
+
+
+def _ver(path):
+    try:
+        with open(path, "rb") as fh:
+            return hashlib.md5(fh.read()).hexdigest()[:8]
+    except OSError:
+        return "1"
+
+
+CSS_VER = _ver("style.css")
+JS_VER = _ver("app.js")
 
 TERMS_UPDATED = "April 2026"
 PRIVACY_UPDATED = "April 2026"
@@ -182,14 +195,14 @@ FOOTER = """<footer class="site">
   </div>
 </footer>"""
 
-HEAD_COMMON = """<meta charset="utf-8"/>
+HEAD_COMMON = f"""<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="theme-color" content="#FCFBF8"/>
+<meta name="theme-color" content="#ffffff"/>
 <link rel="icon" href="/astryn-logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/style.css"/>"""
+<link rel="stylesheet" href="/style.css?v={CSS_VER}"/>"""
 
 
 def page(title, body, description=""):
@@ -207,7 +220,7 @@ def page(title, body, description=""):
 {NAV}
 {body}
 {FOOTER}
-<script src="/app.js" defer></script>
+<script src="/app.js?v={JS_VER}" defer></script>
 </body>
 </html>
 """
