@@ -247,22 +247,22 @@ PILLARS = [
 ]
 
 FEATURES = [
-    ("A chart you can actually talk to", "&#9737;",
+    ("Your Cosmic Portrait", "&#9737;",
      "Astryn turns your birth chart into a personal guide. Built from your exact date, time, and place of birth, it reads the sky the way it touches you, then puts it into plain, useful language. No vague horoscopes written for millions of people. Just you, your chart, and the cosmos.",
      ["Calculated from your exact birth moment", "Planets, houses, and aspects in plain language", "No generic sun-sign horoscopes"]),
-    ("A reading written for you, every day", "&#9788;",
+    ("Your Daily Reading", "&#9788;",
      "Each morning, Astryn blends your birth chart with today's transits to write a fresh daily insight. Read it as a prompt to reflect on, not a fixed prediction. Your daily reading and your weekly report are included with your subscription.",
      ["A fresh insight every morning", "Your chart plus today's transits", "A prompt to reflect, not a prediction"]),
-    ("Look at the week ahead", "&#9784;",
+    ("Your Weekly Forecast", "&#9784;",
      "Your weekly forecast reads the coming seven days against your chart and lays out an overview, the key days to watch, a personal focus, and an intention to carry through the week. A calendar maps the month's biggest sky events so you always know what is coming.",
      ["Overview, key days, and a weekly focus", "An intention to carry through the week", "A calendar of retrogrades, eclipses, and moons"]),
     ("Talk to Astryn", "&#10024;",
      "Ask anything. Astryn answers from your chart and remembers your journal, so the conversation gets more personal over time. Whether you want to understand a placement, prepare for a hard day, or just think something through, it is there to talk.",
      ["Answers grounded in your chart", "Remembers your journal", "More personal over time"]),
-    ("A journal that understands you", "&#9998;",
+    ("Journal &amp; Reflection", "&#9998;",
      "Write freely or use guided templates. Astryn can reflect on your entries, drawing quiet connections between what you feel and what the sky is doing. Over time it builds a deeper, more accurate picture of who you are.",
      ["Free writing or guided templates", "Reflections that connect feeling and sky", "A truer picture of you over time"]),
-    ("Bonds and Constellations", "&#10022;",
+    ("Bonds &amp; Constellations", "&#10022;",
      "Compatibility readings compare two full charts and show where you flow, where you spark, and where you can grow together. Save the people in your life as Bonds, then gather them into Constellations, your family, your friends, your team, to see the shared strengths and dynamics of a whole group.",
      ["Compare two full charts, side by side", "Constellations map family, friends, or teams", "Save people and revisit their readings anytime"]),
 ]
@@ -327,7 +327,7 @@ def landing():
     <div class="wrap">
       <div class="feature reveal">
         <div class="feature-text">
-          <h3>Follow the Moon</h3>
+          <h3>Guided Moon Rituals</h3>
           <p>Lunar guidance and gentle rituals for every phase help you work with the Moon's rhythm rather than against it, from setting intentions on the new moon to releasing what no longer serves you on the full. When you are ready to let something go, write it down and burn it away on the fire and release board.</p>
           <ul>
             <li>Live phase and a guided ritual for every phase</li>
