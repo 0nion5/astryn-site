@@ -1,0 +1,66 @@
+:root {
+  --ink: #1A1A1F;
+  --ink-secondary: #6B6B73;
+  --gold: #B8954F;
+  --bg: #FFFFFF;
+  --hairline: rgba(26, 26, 31, 0.08);
+  --max: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+header.site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--hairline);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 18px; letter-spacing: 0.5px; color: var(--ink); }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+
+nav.site a { color: var(--ink-secondary); font-size: 15px; margin-left: 22px; }
+nav.site a:hover { color: var(--ink); text-decoration: none; }
+
+.hero { text-align: center; padding: 84px 0 64px; }
+.hero img.logo { width: 96px; height: 96px; border-radius: 24px; box-shadow: 0 14px 34px rgba(0,0,0,0.14); }
+.hero h1 { font-size: 40px; margin: 28px 0 10px; font-weight: 600; }
+.hero p.tag { font-size: 18px; color: var(--ink-secondary); max-width: 520px; margin: 0 auto; }
+.hero .pills { margin-top: 22px; color: var(--ink-secondary); font-size: 14px; }
+.hero .pills span { color: var(--gold); margin: 0 8px; }
+
+.legal { padding: 56px 0 96px; }
+.legal h1 { font-size: 32px; margin-bottom: 4px; }
+.legal .updated { color: var(--ink-secondary); font-size: 14px; margin-bottom: 12px; }
+.legal .commitment { font-size: 17px; color: var(--ink-secondary); border-left: 3px solid var(--gold); padding-left: 16px; margin: 24px 0 32px; }
+.legal h2 { font-size: 20px; margin: 36px 0 8px; font-weight: 600; }
+.legal p { white-space: pre-wrap; margin: 0 0 12px; color: #2c2c33; }
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 40px 24px 64px;
+  text-align: center;
+  color: var(--ink-secondary);
+  font-size: 13px;
+}
+footer.site a { color: var(--ink-secondary); margin: 0 10px; }
+footer.site .company { margin-top: 12px; }
