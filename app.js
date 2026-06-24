@@ -23,11 +23,11 @@
         x: Math.random() * w,
         y: Math.random() * h,
         r: Math.random() * 1.3 + 0.3,
-        base: Math.random() * 0.5 + 0.2,
-        amp: Math.random() * 0.5,
+        base: Math.random() * 0.22 + 0.08,
+        amp: Math.random() * 0.18,
         spd: Math.random() * 0.8 + 0.2,
         ph: Math.random() * Math.PI * 2,
-        gold: Math.random() < 0.18,
+        gold: Math.random() < 0.22,
       }));
     }
 
@@ -38,8 +38,8 @@
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fillStyle = s.gold
-          ? `rgba(228, 206, 156, ${Math.max(0, a)})`
-          : `rgba(255, 255, 255, ${Math.max(0, a)})`;
+          ? `rgba(184, 149, 79, ${Math.max(0, a) * 1.4})`
+          : `rgba(26, 26, 31, ${Math.max(0, a)})`;
         ctx.fill();
       }
       requestAnimationFrame(draw);
