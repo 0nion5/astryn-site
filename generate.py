@@ -253,7 +253,7 @@ FEATURES = [
     ("Daily &amp; Weekly Forecasts", "&#9788;",
      "Wake up to guidance that actually reflects the sky above you, refreshed each day and each week.",
      ["Personalised to your chart", "Weekly themes and turning points", "Gentle, grounded, never doom-scrolly"]),
-    ("Astrology &amp; Journal, Together", "&#10024;",
+    ("Where Your Words Meet the Universe", "&#10024;",
      "Astryn weaves your birth chart and your journal into one thread, so the sky above and the life you are living move in step. As the planets shift, your reflections gain context, and over time you bring your days into line with the universe.",
      ["Your entries read in light of your chart", "Cosmic timing for what you are working through", "A clearer sense of living in rhythm with the sky"]),
     ("Journal &amp; Reflection", "&#9998;",
