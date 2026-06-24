@@ -1,21 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
+<title>Astryn — Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Astryn by Eluma Labs Ltd."/>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Astryn — Privacy Policy</title>
+<meta name="theme-color" content="#07070C"/>
 <link rel="icon" href="/astryn-logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<header class="site">
-  <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn"/>ASTRYN</a>
-  <nav class="site">
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
-  </nav>
+<canvas class="sky-canvas" aria-hidden="true"></canvas>
+<div class="sky-nebula" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn logo"/><span>ASTRYN</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav-links">
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#moon">Moon Rituals</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="nav-cta" href="#get">Get the app</a>
+    </nav>
+  </div>
 </header>
-<main class="legal"><div class="wrap">
+<main class="legal"><div class="wrap"><div class="doc">
+<a class="back-link" href="/index.html">&#8592; Back to Astryn</a>
 <h1>Privacy Policy</h1>
 <div class="updated">Last updated: April 2026</div>
 <div class="commitment">Your privacy is fundamental to Astryn. We collect only what&#x27;s necessary and never sell your personal data.</div>
@@ -72,10 +86,39 @@ London, WC2H 9JQ
 United Kingdom
 
 Email: hello@elumahq.com</p>
-</div></main>
+</div></div></main>
 <footer class="site">
-  <div><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="mailto:hello@elumahq.com">Contact</a></div>
-  <div class="company">Astryn is a product of Eluma Labs Ltd. &copy; 2026 Eluma Labs Ltd. Company No. 17129588.</div>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn logo"/><span>ASTRYN</span></a>
+        <p class="tagline">Personal astrology from your own birth chart, guided moon rituals, and a guide who remembers your story.</p>
+      </div>
+      <div class="links">
+        <div>
+          <h4>Product</h4>
+          <a href="/index.html#features">Features</a>
+          <a href="/index.html#moon">Moon Rituals</a>
+          <a href="/index.html#get">Get the app</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      Astryn is a product of Eluma Labs Ltd, a company registered in England and Wales (No. 17129588),
+      71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.<br/>
+      &copy; 2026 Eluma Labs Ltd. All rights reserved.
+    </div>
+  </div>
 </footer>
+<script src="/app.js" defer></script>
 </body>
 </html>

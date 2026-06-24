@@ -133,41 +133,87 @@ United Kingdom
 Email: hello@elumahq.com"""),
 ]
 
-HEADER = """<header class="site">
-  <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn"/>ASTRYN</a>
-  <nav class="site">
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
-  </nav>
+NAV = """<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn logo"/><span>ASTRYN</span></a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <nav class="nav-links">
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#moon">Moon Rituals</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="nav-cta" href="#get">Get the app</a>
+    </nav>
+  </div>
 </header>"""
 
 FOOTER = """<footer class="site">
-  <div><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="mailto:hello@elumahq.com">Contact</a></div>
-  <div class="company">Astryn is a product of Eluma Labs Ltd. &copy; 2026 Eluma Labs Ltd. Company No. 17129588.</div>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/index.html"><img src="/astryn-logo.png" alt="Astryn logo"/><span>ASTRYN</span></a>
+        <p class="tagline">Personal astrology from your own birth chart, guided moon rituals, and a guide who remembers your story.</p>
+      </div>
+      <div class="links">
+        <div>
+          <h4>Product</h4>
+          <a href="/index.html#features">Features</a>
+          <a href="/index.html#moon">Moon Rituals</a>
+          <a href="/index.html#get">Get the app</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms of Service</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:hello@elumahq.com">hello@elumahq.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      Astryn is a product of Eluma Labs Ltd, a company registered in England and Wales (No. 17129588),
+      71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.<br/>
+      &copy; 2026 Eluma Labs Ltd. All rights reserved.
+    </div>
+  </div>
 </footer>"""
 
+HEAD_COMMON = """<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#07070C"/>
+<link rel="icon" href="/astryn-logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/style.css"/>"""
 
-def page(title, body):
+
+def page(title, body, description=""):
+    desc = f'<meta name="description" content="{html.escape(description)}"/>' if description else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>{html.escape(title)}</title>
-<link rel="icon" href="/astryn-logo.png"/>
-<link rel="stylesheet" href="/style.css"/>
+{desc}
+{HEAD_COMMON}
 </head>
 <body>
-{HEADER}
+<canvas class="sky-canvas" aria-hidden="true"></canvas>
+<div class="sky-nebula" aria-hidden="true"></div>
+{NAV}
 {body}
 {FOOTER}
+<script src="/app.js" defer></script>
 </body>
 </html>
 """
 
 
 def legal_page(title, updated, sections, commitment=None):
-    parts = [f'<main class="legal"><div class="wrap">',
+    parts = ['<main class="legal"><div class="wrap"><div class="doc">',
+             '<a class="back-link" href="/index.html">&#8592; Back to Astryn</a>',
              f'<h1>{html.escape(title)}</h1>',
              f'<div class="updated">Last updated: {html.escape(updated)}</div>']
     if commitment:
@@ -175,20 +221,116 @@ def legal_page(title, updated, sections, commitment=None):
     for heading, body in sections:
         parts.append(f'<h2>{html.escape(heading)}</h2>')
         parts.append(f'<p>{html.escape(body)}</p>')
-    parts.append('</div></main>')
-    return page(f"Astryn — {title}", "\n".join(parts))
+    parts.append('</div></div></main>')
+    return page(f"Astryn — {title}", "\n".join(parts), description=f"{title} for Astryn by Eluma Labs Ltd.")
+
+
+PILLARS = [
+    ("&#9728;", "Personal Readings", "Daily and weekly guidance drawn from your own birth chart, not generic sun-sign horoscopes."),
+    ("&#9789;", "Guided Moon Rituals", "Phase-aware rituals that help you set intentions, reflect, and release as the moon turns."),
+    ("&#10022;", "Soul Connections", "Explore compatibility and the dynamics between the people who matter, one chart at a time."),
+]
+
+FEATURES = [
+    ("Your Cosmic Portrait", "&#9737;",
+     "A precise natal chart calculated from your exact date, time, and place of birth, the blueprint behind everything Astryn tells you.",
+     ["Planets, houses and aspects", "Plain-language interpretation", "A living portrait that deepens over time"]),
+    ("Daily &amp; Weekly Forecasts", "&#9788;",
+     "Wake up to guidance that actually reflects the sky above you, refreshed each day and each week.",
+     ["Personalised to your chart", "Weekly themes and turning points", "Gentle, grounded, never doom-scrolly"]),
+    ("A Guide Who Remembers", "&#10024;",
+     "Talk things through with an AI guide that holds the thread of your story, your chart, your patterns, what you told it last week.",
+     ["Context-aware conversations", "Reflective, not prescriptive", "Yours alone, always private"]),
+    ("Journal &amp; Reflection", "&#9998;",
+     "Capture how each day lands with prompts shaped by the current sky, then watch the patterns emerge.",
+     ["Cosmic-aware prompts", "Calendar of your reflections", "Export anytime"]),
+]
 
 
 def landing():
-    body = """<main>
+    pillars = "\n".join(
+        f'<div class="pillar reveal"><div class="glyph">{g}</div><h3>{t}</h3><p>{d}</p></div>'
+        for g, t, d in PILLARS
+    )
+    features = []
+    for title, glyph, body, items in FEATURES:
+        lis = "".join(f"<li>{i}</li>" for i in items)
+        features.append(f"""<div class="feature reveal">
+        <div class="feature-text">
+          <h3>{title}</h3>
+          <p>{body}</p>
+          <ul>{lis}</ul>
+        </div>
+        <div class="feature-media"><div class="big-glyph">{glyph}</div></div>
+      </div>""")
+    features_html = "\n".join(features)
+
+    body = f"""<main>
   <section class="hero">
-    <img class="logo" src="/astryn-logo.png" alt="Astryn"/>
-    <h1>Astryn</h1>
-    <p class="tag">Personal astrology from your own birth chart, with guided moon rituals and a guide who remembers your story.</p>
-    <div class="pills">Personal Readings <span>·</span> Guided Moon Rituals <span>·</span> Soul Connections</div>
+    <div class="wrap">
+      <img class="hero-badge" src="/astryn-logo.png" alt="Astryn app icon"/>
+      <span class="eyebrow">Observatory-grade astrology</span>
+      <h1>Read the sky<br/><em>that is yours alone.</em></h1>
+      <p class="lead">Personal astrology from your own birth chart, with guided moon rituals and a guide who remembers your story.</p>
+      <div class="hero-cta" id="get">
+        <a class="btn btn-primary" href="#get">Download on the App Store</a>
+        <a class="btn btn-ghost" href="/index.html#features">Explore features</a>
+      </div>
+      <p class="hero-note">Made with care by Eluma Labs Ltd. Your data stays yours.</p>
+    </div>
+  </section>
+
+  <section class="block" id="pillars">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Astryn</span>
+        <h2>Astrology that knows your chart</h2>
+        <p>Three things Astryn does beautifully, all rooted in the real position of the stars at the moment you were born.</p>
+      </div>
+      <div class="pillars">{pillars}</div>
+    </div>
+  </section>
+
+  <section class="block" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What's inside</span>
+        <h2>Everything, personalised</h2>
+        <p>Not one-size-fits-all horoscopes, guidance computed from your unique sky.</p>
+      </div>
+      {features_html}
+    </div>
+  </section>
+
+  <section class="block" id="moon">
+    <div class="wrap">
+      <div class="feature reveal">
+        <div class="feature-text">
+          <h3>Guided Moon Rituals</h3>
+          <p>The moon sets the rhythm. Astryn tracks every phase and offers a guided ritual to match, intention-setting at the new moon, release at the full, reflection in between.</p>
+          <ul>
+            <li>Live phase and illumination</li>
+            <li>One thoughtful ritual per phase</li>
+            <li>A fire-and-release board to let things go</li>
+          </ul>
+        </div>
+        <div class="feature-media">
+          <div class="moon-stage"><div class="moon"><div class="moon-shadow"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="download">
+    <div class="wrap reveal">
+      <h2>Begin your journey</h2>
+      <p>Your chart is waiting. Step into the observatory and read the sky that's yours alone.</p>
+      <a class="btn btn-primary" href="#get">Download on the App Store</a>
+    </div>
   </section>
 </main>"""
-    return page("Astryn — Personal Astrology", body)
+    return page("Astryn — Personal Astrology & Guided Moon Rituals", body,
+                description="Astryn is personal astrology from your own birth chart, with daily and weekly forecasts, guided moon rituals, and a guide who remembers your story.")
 
 
 def main():
