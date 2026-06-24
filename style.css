@@ -337,6 +337,39 @@ section.block:nth-of-type(even) { background: var(--bg-alt); }
 .contact-box p { color: var(--ink-soft); margin: 0 0 14px; }
 .contact-box a { font-size: 18px; font-weight: 600; color: var(--accent); }
 
+/* Membership tiers ------------------------------------------ */
+.tiers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
+.tier {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px 30px;
+  box-shadow: 0 6px 22px rgba(17,17,20,0.04);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s;
+}
+.tier:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(17,17,20,0.09); }
+.tier-featured { border-color: rgba(109,94,240,0.45); box-shadow: 0 14px 40px rgba(109,94,240,0.12); }
+.tier-badge {
+  position: absolute; top: -12px; left: 30px;
+  background: var(--accent); color: #fff;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px;
+}
+.tier h3 { font-size: 22px; margin: 0 0 4px; }
+.tier-cycle { color: var(--ink-faint); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 14px; }
+.tier p { color: var(--ink-soft); font-size: 15px; margin: 0; }
+.tiers-note { max-width: 760px; margin: 28px auto 0; color: var(--ink-soft); font-size: 14.5px; text-align: center; }
+
+/* Subscription details (fine print) ------------------------- */
+.sub-legal { padding: 64px 0 88px; }
+.sub-legal-box { max-width: 760px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+.sub-legal-box h3 { font-size: 18px; margin: 0 0 14px; }
+.sub-legal-box p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.7; margin: 0 0 12px; }
+.sub-legal-box p:last-child { margin-bottom: 0; }
+.sub-legal-box a { color: var(--accent); text-decoration: underline; }
+.sub-legal-box strong { color: var(--ink); }
+
 /* CTA band (dark, for pro contrast) -------------------------- */
 .cta-band {
   text-align: center;
@@ -391,6 +424,7 @@ footer.site .legal { margin-top: 48px; padding-top: 28px; border-top: 1px solid 
   .steps { grid-template-columns: 1fr 1fr; }
   .safety-grid { grid-template-columns: 1fr; }
   .safety-header { flex-direction: column; align-items: flex-start; }
+  .tiers { grid-template-columns: 1fr; }
   .feature { grid-template-columns: 1fr; gap: 28px; padding: 36px 0; }
   .feature:nth-child(even) .feature-media { order: 0; }
   footer.site .cols { flex-direction: column; }
