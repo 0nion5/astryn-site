@@ -408,6 +408,17 @@ def landing():
     </div>
   </section>
 
+  <section class="block" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What's inside</span>
+        <h2>Everything, personalised</h2>
+        <p>Not one-size-fits-all horoscopes. Guidance computed from your unique sky, woven into your daily life.</p>
+      </div>
+      {features_html}
+    </div>
+  </section>
+
   <section class="block" id="moon">
     <div class="wrap">
       <div class="feature reveal">
@@ -428,17 +439,6 @@ def landing():
           </video>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="features">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">What's inside</span>
-        <h2>Everything, personalised</h2>
-        <p>Not one-size-fits-all horoscopes. Guidance computed from your unique sky, woven into your daily life.</p>
-      </div>
-      {features_html}
     </div>
   </section>
 
