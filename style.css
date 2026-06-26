@@ -209,6 +209,7 @@ section.block:nth-of-type(even) { background: var(--bg-alt); }
   display: grid; place-items: center; font-size: 26px; color: var(--accent);
   background: var(--accent-soft);
 }
+.pillar .glyph svg { width: 32px; height: 32px; stroke-width: 3.4; }
 .pillar h3 { font-size: 21px; margin: 0 0 10px; }
 .pillar p { color: var(--ink-soft); font-size: 15px; margin: 0; }
 
@@ -239,6 +240,8 @@ section.block:nth-of-type(even) { background: var(--bg-alt); }
   box-shadow: 0 10px 30px rgba(17,17,20,0.05);
 }
 .feature-media .big-glyph { font-size: 84px; opacity: 0.9; color: var(--accent); filter: drop-shadow(0 8px 24px rgba(109,94,240,0.28)); }
+.feature-media .feature-art { display: grid; place-items: center; }
+.feature-media .feature-art svg { width: 152px; height: 152px; color: var(--accent); stroke-width: 1.8; filter: drop-shadow(0 8px 24px rgba(109,94,240,0.26)); }
 
 /* Moon visual ------------------------------------------------ */
 .moon-stage { display: grid; place-items: center; padding: 20px 0; }

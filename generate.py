@@ -240,29 +240,104 @@ def legal_page(title, updated, sections, commitment=None):
     return page(f"Astryn — {title}", "\n".join(parts), description=f"{title} for Astryn by Eluma Labs Ltd.")
 
 
+ICONS = {
+    "saturn": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="50" cy="48" r="21"/>
+  <ellipse cx="50" cy="48" rx="40" ry="12" transform="rotate(-22 50 48)"/>
+</svg>""",
+    "cosmos": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="50" cy="50" rx="40" ry="18" transform="rotate(-18 50 50)"/>
+  <ellipse cx="50" cy="50" rx="40" ry="18" transform="rotate(58 50 50)"/>
+  <circle cx="50" cy="50" r="11" fill="currentColor" stroke="none"/>
+  <circle cx="88" cy="38" r="4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="62" r="3" fill="currentColor" stroke="none"/>
+</svg>""",
+    "journal": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M50 36 C42 30 28 29 18 33 L18 73 C28 69 42 70 50 76 C58 70 72 69 82 73 L82 33 C72 29 58 30 50 36 Z"/>
+  <line x1="50" y1="36" x2="50" y2="76"/>
+  <path d="M50 10 C50.8 16 52 17.2 58 18 C52 18.8 50.8 20 50 26 C49.2 20 48 18.8 42 18 C48 17.2 49.2 16 50 10 Z" fill="currentColor" stroke="none"/>
+</svg>""",
+    "wheel": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="50" cy="50" r="42"/>
+  <circle cx="50" cy="50" r="28"/>
+  <line x1="78" y1="50" x2="92" y2="50"/>
+  <line x1="74.2" y1="64" x2="86.4" y2="71"/>
+  <line x1="64" y1="74.2" x2="71" y2="86.4"/>
+  <line x1="50" y1="78" x2="50" y2="92"/>
+  <line x1="36" y1="74.2" x2="29" y2="86.4"/>
+  <line x1="25.8" y1="64" x2="13.6" y2="71"/>
+  <line x1="22" y1="50" x2="8" y2="50"/>
+  <line x1="25.8" y1="36" x2="13.6" y2="29"/>
+  <line x1="36" y1="25.8" x2="29" y2="13.6"/>
+  <line x1="50" y1="22" x2="50" y2="8"/>
+  <line x1="64" y1="25.8" x2="71" y2="13.6"/>
+  <line x1="74.2" y1="36" x2="86.4" y2="29"/>
+  <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/>
+  <circle cx="50" cy="8" r="2.6" fill="currentColor" stroke="none"/>
+</svg>""",
+    "sun": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="50" cy="50" r="18"/>
+  <line x1="74" y1="50" x2="88" y2="50"/>
+  <line x1="70.8" y1="62" x2="82.9" y2="69"/>
+  <line x1="62" y1="70.8" x2="69" y2="82.9"/>
+  <line x1="50" y1="74" x2="50" y2="88"/>
+  <line x1="38" y1="70.8" x2="31" y2="82.9"/>
+  <line x1="29.2" y1="62" x2="17.1" y2="69"/>
+  <line x1="26" y1="50" x2="12" y2="50"/>
+  <line x1="29.2" y1="38" x2="17.1" y2="31"/>
+  <line x1="38" y1="29.2" x2="31" y2="17.1"/>
+  <line x1="50" y1="26" x2="50" y2="12"/>
+  <line x1="62" y1="29.2" x2="69" y2="17.1"/>
+  <line x1="70.8" y1="38" x2="82.9" y2="31"/>
+</svg>""",
+    "forecast": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="22" cy="54" r="12"/>
+  <path d="M22 42 A12 12 0 0 1 22 66 A7 12 0 0 0 22 42 Z" fill="currentColor" stroke="none"/>
+  <circle cx="50" cy="54" r="12"/>
+  <path d="M50 42 A12 12 0 0 1 50 66 Z" fill="currentColor" stroke="none"/>
+  <circle cx="78" cy="54" r="12"/>
+  <path d="M78 42 A12 12 0 0 1 78 66 A10 12 0 0 0 78 42 Z" fill="currentColor" stroke="none"/>
+  <path d="M50 14 C50.5 18 51 18.5 54 19 C51 19.5 50.5 20 50 24 C49.5 20 49 19.5 46 19 C49 18.5 49.5 18 50 14 Z" fill="currentColor" stroke="none"/>
+</svg>""",
+    "chat": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M28 24 H72 A12 12 0 0 1 84 36 V56 A12 12 0 0 1 72 68 H46 L30 82 V68 H28 A12 12 0 0 1 16 56 V36 A12 12 0 0 1 28 24 Z"/>
+  <path d="M50 38 C51.2 46 53 47.8 61 49 C53 50.2 51.2 52 50 60 C48.8 52 47 50.2 39 49 C47 47.8 48.8 46 50 38 Z" fill="currentColor" stroke="none"/>
+</svg>""",
+    "constellation": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="18,68 38,34 60,52 82,24"/>
+  <line x1="38" y1="34" x2="52" y2="80"/>
+  <circle cx="18" cy="68" r="3.2" fill="currentColor" stroke="none"/>
+  <circle cx="38" cy="34" r="3.6" fill="currentColor" stroke="none"/>
+  <circle cx="60" cy="52" r="3.2" fill="currentColor" stroke="none"/>
+  <circle cx="82" cy="24" r="3.6" fill="currentColor" stroke="none"/>
+  <circle cx="52" cy="80" r="3.2" fill="currentColor" stroke="none"/>
+</svg>""",
+}
+
+
 PILLARS = [
-    ("&#9728;", "Your personal astrologer", "A guide that understands your chart and speaks to you in plain language, never horoscopes written for millions."),
-    ("&#10022;", "The cosmos, applied to your life", "Astryn brings the context of the universe into the real events of your days, your intentions, and your rituals."),
-    ("&#9789;", "Astrology meets your journal", "Write your day and Astryn aligns it with the stars, building a deeper, truer picture of who you are over time."),
+    ("saturn", "Your personal astrologer", "A guide that understands your chart and speaks to you in plain language, never horoscopes written for millions."),
+    ("cosmos", "The cosmos, applied to your life", "Astryn brings the context of the universe into the real events of your days, your intentions, and your rituals."),
+    ("journal", "Astrology meets your journal", "Write your day and Astryn aligns it with the stars, building a deeper, truer picture of who you are over time."),
 ]
 
 FEATURES = [
-    ("Your Cosmic Portrait", "&#9737;",
+    ("Your Cosmic Portrait", "wheel",
      "Astryn turns your birth chart into a personal guide. Built from your exact date, time, and place of birth, it reads the sky the way it touches you, then puts it into plain, useful language. No vague horoscopes written for millions of people. Just you, your chart, and the cosmos.",
      ["Calculated from your exact birth moment", "Planets, houses, and aspects in plain language", "No generic sun-sign horoscopes"]),
-    ("Your Daily Reading", "&#9788;",
+    ("Your Daily Reading", "sun",
      "Each morning, Astryn blends your birth chart with today's transits to write a fresh daily insight. Read it as a prompt to reflect on, not a fixed prediction.",
      ["A fresh insight every morning", "Your chart plus today's transits", "A prompt to reflect, not a prediction"]),
-    ("Your Weekly Forecast", "&#9784;",
+    ("Your Weekly Forecast", "forecast",
      "Your weekly forecast reads the coming seven days against your chart and lays out an overview, the key days to watch, a personal focus, and an intention to carry through the week. A calendar maps the month's biggest sky events so you always know what is coming.",
      ["Overview, key days, and a weekly focus", "An intention to carry through the week", "A calendar of retrogrades, eclipses, and moons"]),
-    ("Talk to Astryn", "&#10024;",
+    ("Talk to Astryn", "chat",
      "Ask anything. Astryn answers from your chart and remembers your journal, so the conversation gets more personal over time. Whether you want to understand a placement, prepare for a hard day, or just think something through, it is there to talk.",
      ["Answers grounded in your chart", "Remembers your journal", "More personal over time"]),
-    ("Journal &amp; Reflection", "&#9998;",
+    ("Journal &amp; Reflection", "journal",
      "Record what is actually happening in your life, the events, feelings, and turning points of your days. Astryn reads your journal against your birth chart and the moving sky, bringing the context of the universe to what you are living through, so you can see how your daily life and the cosmos line up.",
      ["Write freely or use guided templates", "Your entries read against your chart and the sky", "See the cosmic context behind your real days"]),
-    ("Bonds &amp; Constellations", "&#10022;",
+    ("Bonds &amp; Constellations", "constellation",
      "Compatibility readings compare two full charts and show where you flow, where you spark, and where you can grow together. Save the people in your life as Bonds, then gather them into Constellations, your family, your friends, your team, to see the shared strengths and dynamics of a whole group.",
      ["Compare two full charts, side by side", "Constellations map family, friends, or teams", "Save people and revisit their readings anytime"]),
 ]
@@ -270,7 +345,7 @@ FEATURES = [
 
 def landing():
     pillars = "\n".join(
-        f'<div class="pillar reveal"><div class="glyph">{g}</div><h3>{t}</h3><p>{d}</p></div>'
+        f'<div class="pillar reveal"><div class="glyph">{ICONS[g]}</div><h3>{t}</h3><p>{d}</p></div>'
         for g, t, d in PILLARS
     )
     features = []
@@ -282,7 +357,7 @@ def landing():
           <p>{body}</p>
           <ul>{lis}</ul>
         </div>
-        <div class="feature-media"><div class="big-glyph">{glyph}</div></div>
+        <div class="feature-media"><div class="feature-art">{ICONS[glyph]}</div></div>
       </div>""")
     features_html = "\n".join(features)
 
