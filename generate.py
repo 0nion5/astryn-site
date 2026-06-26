@@ -346,6 +346,7 @@ FEATURES = [
 FEATURE_MEDIA = {
     "Your Cosmic Portrait": "cosmic-portrait",
     "Your Daily Reading": "daily-reading",
+    "Your Weekly Forecast": "weekly-forecast",
     "Talk to Astryn": "talk-to-astryn",
     "Journal &amp; Reflection": "journal",
     "Bonds &amp; Constellations": "bonds",
