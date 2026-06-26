@@ -251,7 +251,7 @@ FEATURES = [
      "Astryn turns your birth chart into a personal guide. Built from your exact date, time, and place of birth, it reads the sky the way it touches you, then puts it into plain, useful language. No vague horoscopes written for millions of people. Just you, your chart, and the cosmos.",
      ["Calculated from your exact birth moment", "Planets, houses, and aspects in plain language", "No generic sun-sign horoscopes"]),
     ("Your Daily Reading", "&#9788;",
-     "Each morning, Astryn blends your birth chart with today's transits to write a fresh daily insight. Read it as a prompt to reflect on, not a fixed prediction. Your daily reading and your weekly report are included with your subscription.",
+     "Each morning, Astryn blends your birth chart with today's transits to write a fresh daily insight. Read it as a prompt to reflect on, not a fixed prediction.",
      ["A fresh insight every morning", "Your chart plus today's transits", "A prompt to reflect, not a prediction"]),
     ("Your Weekly Forecast", "&#9784;",
      "Your weekly forecast reads the coming seven days against your chart and lays out an overview, the key days to watch, a personal focus, and an intention to carry through the week. A calendar maps the month's biggest sky events so you always know what is coming.",
@@ -294,7 +294,7 @@ def landing():
       <h1>Astrology that is<br/><em class="grad-text">actually about you.</em></h1>
       <p class="lead">Astryn is your own personal astrologer, bringing together your birth chart and the moving sky with the real events of your life. Journal your days, intentions, and rituals, and Astryn aligns them with the stars.</p>
       <div class="hero-cta" id="get">
-        <a class="btn btn-primary" href="#get">Begin your free trial</a>
+        <a class="btn btn-primary" href="#get">Download on the App Store</a>
         <a class="btn btn-ghost" href="/index.html#features">Explore features</a>
       </div>
       <p class="hero-note">Made with care by Eluma Labs Ltd. Your data stays yours.</p>
@@ -406,47 +406,11 @@ def landing():
     </div>
   </section>
 
-  <section class="block" id="membership">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Membership</span>
-        <h2>One subscription, everything included</h2>
-        <p>Start with a free trial to explore everything, and cancel anytime before it ends without being charged.</p>
-      </div>
-      <div class="tiers">
-        <div class="tier reveal">
-          <h3>Astryn Light</h3>
-          <p class="tier-cycle">Monthly</p>
-          <p>Full access to every feature with a monthly allowance of Lumes, ideal if you dip in day to day.</p>
-        </div>
-        <div class="tier reveal tier-featured">
-          <span class="tier-badge">Most Lumes</span>
-          <h3>Astryn Universe</h3>
-          <p class="tier-cycle">Monthly</p>
-          <p>The same full access with a larger monthly allowance of Lumes, for when Astryn is part of your daily ritual.</p>
-        </div>
-      </div>
-      <p class="tiers-note reveal">Every subscription includes full access to all features, Journal, Chat, Weekly and Daily forecasts, Birth Chart, and Lunar and Cosmic weather, plus a monthly allowance of Lumes that power your chats, lunar guidance, journal reflections, and compatibility readings. Two tiers let you pick the allowance that fits how you use Astryn, and you can top up anytime with in-app purchases. Purchased Lumes do not expire.</p>
-    </div>
-  </section>
-
   <section class="cta-band" id="download">
     <div class="wrap reveal">
-      <h2>Astrology that is actually about you</h2>
-      <p>Whether you are brand new to astrology or have read charts for years, Astryn meets you where you are and grows with you. Begin your free trial and explore everything.</p>
-      <a class="btn btn-primary" href="#get">Begin your free trial</a>
-    </div>
-  </section>
-
-  <section class="block sub-legal">
-    <div class="wrap">
-      <div class="sub-legal-box reveal">
-        <h3>Subscription details</h3>
-        <p>Astryn offers auto-renewable subscriptions: <strong>Astryn Light (monthly)</strong> and <strong>Astryn Universe (monthly)</strong>. A free trial is available to eligible new subscribers.</p>
-        <p>Payment is charged to your Apple ID at confirmation of purchase. Your subscription automatically renews at the standard price unless it is cancelled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the end of the current period. If a free trial is offered, any unused portion of the trial is forfeited when you purchase a subscription, where applicable.</p>
-        <p>You can manage or cancel your subscription, and turn off auto-renewal, in your Apple ID Account Settings at any time after purchase. You can delete your account at any time within the app from the settings page.</p>
-        <p><a href="/terms.html">Terms of Use (EULA)</a> &nbsp;&middot;&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
-      </div>
+      <h2>Begin your journey</h2>
+      <p>Your chart is waiting. Step into the observatory and read the sky that's yours alone.</p>
+      <a class="btn btn-primary" href="#get">Download on the App Store</a>
     </div>
   </section>
 </main>"""
