@@ -331,6 +331,9 @@ FEATURES = [
     ("Your Weekly Forecast", "forecast",
      "Your weekly forecast reads the coming seven days against your chart and lays out an overview, the key days to watch, a personal focus, and an intention to carry through the week. A calendar maps the month's biggest sky events so you always know what is coming.",
      ["Overview, key days, and a weekly focus", "An intention to carry through the week", "A calendar of retrogrades, eclipses, and moons"]),
+    ("Guided Moon Rituals", "forecast",
+     "Lunar guidance and gentle rituals for every phase help you work with the Moon's rhythm rather than against it, from setting intentions on the new moon to releasing what no longer serves you on the full. When you are ready to let something go, write it down and burn it away on the fire and release board.",
+     ["A live phase and a guided ritual for every phase", "Set intentions on the new moon", "A fire and release board to burn what no longer serves you"]),
     ("Talk to Astryn", "chat",
      "Ask anything. Astryn answers from your chart and remembers your journal, so the conversation gets more personal over time. Whether you want to understand a placement, prepare for a hard day, or just think something through, it is there to talk.",
      ["Answers grounded in your chart", "Remembers your journal", "More personal over time"]),
@@ -347,6 +350,7 @@ FEATURE_MEDIA = {
     "Your Cosmic Portrait": "cosmic-portrait",
     "Your Daily Reading": "daily-reading",
     "Your Weekly Forecast": "weekly-forecast",
+    "Guided Moon Rituals": "moon-ritual",
     "Talk to Astryn": "talk-to-astryn",
     "Journal &amp; Reflection": "journal",
     "Bonds &amp; Constellations": "bonds",
@@ -416,29 +420,6 @@ def landing():
         <p>Not one-size-fits-all horoscopes. Guidance computed from your unique sky, woven into your daily life.</p>
       </div>
       {features_html}
-    </div>
-  </section>
-
-  <section class="block" id="moon">
-    <div class="wrap">
-      <div class="feature reveal">
-        <div class="feature-text">
-          <h3>Guided Moon Rituals</h3>
-          <p>Lunar guidance and gentle rituals for every phase help you work with the Moon's rhythm rather than against it, from setting intentions on the new moon to releasing what no longer serves you on the full. When you are ready to let something go, write it down and burn it away on the fire and release board.</p>
-          <ul>
-            <li>Live phase and a guided ritual for every phase</li>
-            <li>Set intentions on the new moon</li>
-            <li>A fire and release board to burn what no longer serves you</li>
-          </ul>
-        </div>
-        <div class="feature-media has-video">
-          <img class="feature-poster" src="/media/moon-ritual.jpg" alt="" aria-hidden="true"/>
-          <video class="feature-video" autoplay loop muted playsinline preload="metadata" poster="/media/moon-ritual.jpg">
-            <source src="/media/moon-ritual.webm" type="video/webm"/>
-            <source src="/media/moon-ritual.web.mp4" type="video/mp4"/>
-          </video>
-        </div>
-      </div>
     </div>
   </section>
 
