@@ -345,6 +345,10 @@ FEATURES = [
 # Feature title -> media basename in /media (expects <name>.webm, <name>.web.mp4, <name>.jpg)
 FEATURE_MEDIA = {
     "Your Cosmic Portrait": "cosmic-portrait",
+    "Your Daily Reading": "daily-reading",
+    "Talk to Astryn": "talk-to-astryn",
+    "Journal &amp; Reflection": "journal",
+    "Bonds &amp; Constellations": "bonds",
 }
 
 
