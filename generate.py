@@ -342,6 +342,11 @@ FEATURES = [
      ["Compare two full charts, side by side", "Constellations map family, friends, or teams", "Save people and revisit their readings anytime"]),
 ]
 
+# Feature title -> media basename in /media (expects <name>.webm, <name>.web.mp4, <name>.jpg)
+FEATURE_MEDIA = {
+    "Your Cosmic Portrait": "cosmic-portrait",
+}
+
 
 def landing():
     pillars = "\n".join(
@@ -351,13 +356,24 @@ def landing():
     features = []
     for title, glyph, body, items in FEATURES:
         lis = "".join(f"<li>{i}</li>" for i in items)
+        media_key = FEATURE_MEDIA.get(title)
+        if media_key:
+            media = f"""<div class="feature-media has-video">
+          <img class="feature-poster" src="/media/{media_key}.jpg" alt="" aria-hidden="true"/>
+          <video class="feature-video" autoplay loop muted playsinline preload="metadata" poster="/media/{media_key}.jpg">
+            <source src="/media/{media_key}.webm" type="video/webm"/>
+            <source src="/media/{media_key}.web.mp4" type="video/mp4"/>
+          </video>
+        </div>"""
+        else:
+            media = f'<div class="feature-media"><div class="feature-art">{ICONS[glyph]}</div></div>'
         features.append(f"""<div class="feature reveal">
         <div class="feature-text">
           <h3>{title}</h3>
           <p>{body}</p>
           <ul>{lis}</ul>
         </div>
-        <div class="feature-media"><div class="feature-art">{ICONS[glyph]}</div></div>
+        {media}
       </div>""")
     features_html = "\n".join(features)
 
