@@ -420,8 +420,12 @@ def landing():
             <li>A fire and release board to burn what no longer serves you</li>
           </ul>
         </div>
-        <div class="feature-media">
-          <div class="moon-stage"><div class="moon"><div class="moon-shadow"></div></div></div>
+        <div class="feature-media has-video">
+          <img class="feature-poster" src="/media/moon-ritual.jpg" alt="" aria-hidden="true"/>
+          <video class="feature-video" autoplay loop muted playsinline preload="metadata" poster="/media/moon-ritual.jpg">
+            <source src="/media/moon-ritual.webm" type="video/webm"/>
+            <source src="/media/moon-ritual.web.mp4" type="video/mp4"/>
+          </video>
         </div>
       </div>
     </div>
