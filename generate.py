@@ -16,7 +16,7 @@ def _ver(path):
 CSS_VER = _ver("style.css")
 JS_VER = _ver("app.js")
 
-TERMS_UPDATED = "April 2026"
+TERMS_UPDATED = "June 2026"
 PRIVACY_UPDATED = "April 2026"
 PRIVACY_COMMITMENT = ("Your privacy is fundamental to Astryn. We collect only "
                       "what's necessary and never sell your personal data.")
@@ -82,6 +82,10 @@ You acknowledge that AI output is generated probabilistically and that you bear 
 
 Where an introductory free trial is offered, you will not be charged until the trial ends, and you can cancel at any time during the trial without being charged by cancelling at least 24 hours before the trial's end."""),
 ("10. Intellectual Property", """All content, features, and functionality of the App are owned by Eluma Labs Ltd and are protected by international copyright, trademark, and other intellectual property laws.
+
+The App also contains proprietary audio-visual material, including video lessons, guided explainers, and personalised video readings (together, "Video Content"). All Video Content is the exclusive property of Eluma Labs Ltd or its licensors and is made available to you under a limited, personal, non-transferable, non-exclusive licence for your own private, non-commercial use within the App only.
+
+You must not, and must not permit any other person to: copy, screen-record, screen-capture, download (except where the App expressly provides a save feature for your own personal use), reproduce, republish, broadcast, sell, rent, sub-licence, distribute, share, or otherwise make available any Video Content or other App content, in whole or in part, by any means; remove, obscure, or alter any watermark, logo, or proprietary notice; or use any Video Content or App content to train, develop, or improve any machine-learning or artificial-intelligence system. Copying or distribution of this content is strictly prohibited. Any unauthorised use immediately terminates your licence and may infringe copyright and other laws.
 
 You retain ownership of the content you create within the App. By using the service, you grant us a license to process your content solely to provide and improve the service."""),
 ("11. Limitation of Liability", """To the maximum extent permitted by law, Eluma Labs Ltd and its officers, employees, agents, contractors, and partners shall not be liable for any direct, indirect, incidental, special, consequential, exemplary, or punitive damages of any kind, including but not limited to loss of profits, data, goodwill, or opportunities; service interruption or data loss; any damages arising from your reliance on App content or AI-generated output; and actions you take, or fail to take, based on content produced by the App.
