@@ -335,6 +335,9 @@ FEATURES = [
     ("Your Cosmic Portrait", "wheel",
      "Astryn turns your birth chart into a personal guide. Built from your exact date, time, and place of birth, it reads the sky the way it touches you, then puts it into plain, useful language. No vague horoscopes written for millions of people. Just you, your chart, and the cosmos.",
      ["Calculated from your exact birth moment", "Planets, houses, and aspects in plain language", "No generic sun-sign horoscopes"]),
+    ("Personal Video Readings", "video",
+     "Want it brought to life? Astryn can create a personal video reading: a real astrologer guide on screen, talking you through your own chart, a bond, or a whole constellation. It is warm, casual, and made just for you, around five minutes that tell you what it all actually means for your life. Watch it in the app, then save it to keep.",
+     ["A personal astrologer on screen, speaking to you", "Made for your chart, a bond, or a constellation", "Yours to watch in the app and save to your device"]),
     ("Your Daily Reading", "sun",
      "Each morning, Astryn blends your birth chart with today's transits to write a fresh daily insight. Read it as a prompt to reflect on, not a fixed prediction.",
      ["A fresh insight every morning", "Your chart plus today's transits", "A prompt to reflect, not a prediction"]),
@@ -353,14 +356,12 @@ FEATURES = [
     ("Bonds &amp; Constellations", "constellation",
      "Compatibility readings compare two full charts and show where you flow, where you spark, and where you can grow together. Save the people in your life as Bonds, then gather them into Constellations, your family, your friends, your team, to see the shared strengths and dynamics of a whole group.",
      ["Compare two full charts, side by side", "Constellations map family, friends, or teams", "Save people and revisit their readings anytime"]),
-    ("Personal Video Readings", "video",
-     "Want it brought to life? Astryn can create a personal video reading: a real astrologer guide on screen, talking you through your own chart, a bond, or a whole constellation. It is warm, casual, and made just for you, around five minutes that tell you what it all actually means for your life. Watch it in the app, then save it to keep.",
-     ["A personal astrologer on screen, speaking to you", "Made for your chart, a bond, or a constellation", "Yours to watch in the app and save to your device"]),
 ]
 
 # Feature title -> media basename in /media (expects <name>.webm, <name>.web.mp4, <name>.jpg)
 FEATURE_MEDIA = {
     "Your Cosmic Portrait": "cosmic-portrait",
+    "Personal Video Readings": "video-reading",
     "Your Daily Reading": "daily-reading",
     "Your Weekly Forecast": "weekly-forecast",
     "Guided Moon Rituals": "moon-ritual",
