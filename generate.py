@@ -316,6 +316,12 @@ ICONS = {
   <circle cx="82" cy="24" r="3.6" fill="currentColor" stroke="none"/>
   <circle cx="52" cy="80" r="3.2" fill="currentColor" stroke="none"/>
 </svg>""",
+    "video": """<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="14" y="28" width="54" height="44" rx="10"/>
+  <path d="M68 44 L88 32 L88 68 L68 56 Z"/>
+  <path d="M36 41 L52 50 L36 59 Z" fill="currentColor" stroke="none"/>
+  <path d="M24 16 C24.6 20 25.4 20.8 29 21.4 C25.4 22 24.6 22.8 24 26.4 C23.4 22.8 22.6 22 19 21.4 C22.6 20.8 23.4 20 24 16 Z" fill="currentColor" stroke="none"/>
+</svg>""",
 }
 
 
@@ -347,6 +353,9 @@ FEATURES = [
     ("Bonds &amp; Constellations", "constellation",
      "Compatibility readings compare two full charts and show where you flow, where you spark, and where you can grow together. Save the people in your life as Bonds, then gather them into Constellations, your family, your friends, your team, to see the shared strengths and dynamics of a whole group.",
      ["Compare two full charts, side by side", "Constellations map family, friends, or teams", "Save people and revisit their readings anytime"]),
+    ("Personal Video Readings", "video",
+     "Want it brought to life? Astryn can create a personal video reading: a real astrologer guide on screen, talking you through your own chart, a bond, or a whole constellation. It is warm, casual, and made just for you, around five minutes that tell you what it all actually means for your life. Watch it in the app, then save it to keep.",
+     ["A personal astrologer on screen, speaking to you", "Made for your chart, a bond, or a constellation", "Yours to watch in the app and save to your device"]),
 ]
 
 # Feature title -> media basename in /media (expects <name>.webm, <name>.web.mp4, <name>.jpg)
@@ -514,6 +523,8 @@ SUPPORT_FAQ = [
      "Astryn tracks the live phase of the moon and offers one thoughtful ritual to match, intention-setting around the new moon, release around the full moon, and gentle reflection in between. There is also a fire-and-release board for letting things go."),
     ("What are Bonds and Constellations?",
      "Bonds let you add the people who matter and explore the dynamics between your charts. Constellations group several people, such as a family, friendship circle, or team, to reveal shared strengths, roles, and gaps."),
+    ("What is a personal video reading?",
+     "A personal video reading is a short, made-for-you video where an astrologer guide on screen walks you through your own chart, a bond, or a constellation in plain, friendly language, around five minutes that focus on what it means for your life. It is a one-off purchase. Once it is ready you can watch it in the app and save a copy to your device to keep."),
     ("Is my data private?",
      "Yes. Your birth details, journal entries, and conversations are encrypted in transit and at rest. We do not sell your data, share it for advertising, or use it to train public AI models. For full details, see our <a href=\"/privacy.html\">Privacy Policy</a>."),
     ("Is there a free trial?",
